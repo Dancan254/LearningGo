@@ -92,6 +92,45 @@ func main() {
 		If the variable name starts with a uppercase letter then it can be accessed from outside different package other than which it is declared.
 		local variable -> These variables only live till the end of the block or a function in which they are declared. After that, they are Garbage Collected.
 	*/
+
+	//constants
+
+	const pi = 3.14
+
+	fmt.Printf("pi = %v\n", pi)
+
+	//computed constants -> computed at compile time they can be left unused i guess, they do not the unused error
+	const firstname = "John"
+	const lastname = "Doe"
+	const fullname = firstname + " " + lastname
+	fmt.Println(fullname)
+
+	//interpolation
+	/*
+	  Interpolation in Go:
+	  - Go does not support string interpolation directly like some other languages (e.g., Python, JavaScript).
+	  - Instead, Go uses the `fmt` package to format strings.
+	  - The `fmt.Sprintf` function is commonly used for creating formatted strings.
+	  - Placeholders like `%v`, `%d`, `%s`, etc., are used within the format string to indicate where values should be inserted.
+
+	*/
+	name := "John"
+	age := 30
+	formattedString := fmt.Sprintf("My name is %s and I am %d years old.", name, age)
+	fmt.Println(formattedString)
+
+	//interpolating different data types
+	price := 100.50
+	quantity := 2
+	total := price * float64(quantity)
+	formattedString = fmt.Sprintf("The total price of %d items is %f", quantity, total)
+	fmt.Println(formattedString)
+
+	//interpolation with booleans
+	isMember := true
+	formattedString = fmt.Sprintf("Membership status: %t", isMember)
+	fmt.Println(formattedString)
+
 }
 
 type sample struct {
