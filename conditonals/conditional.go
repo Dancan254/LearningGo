@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 func main() {
@@ -36,4 +37,24 @@ func main() {
 	} else {
 		fmt.Println("Message not sent")
 	}
+
+	fmt.Println(pow(2, 3, 6))
+	fmt.Println(power(3, 2, 10))
+}
+
+func pow(x, n, lim float64) float64 {
+	if v := math.Pow(x, n); v < lim {
+		return v
+	}
+	return lim
+}
+
+func power(x, n, lim float64) float64 {
+	if v := math.Pow(x, n); v < lim {
+		return v
+	} else {
+		fmt.Printf("%g >= %g\n", v, lim)
+	}
+	// can't use v here
+	return lim
 }
