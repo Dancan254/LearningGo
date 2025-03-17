@@ -69,7 +69,7 @@ func main() {
 	fmt.Printf("Type: %T Value: %v\n\n", com, com)
 	fmt.Printf("Type: %T Value: %v\n\n", sam, sam)
 
-	//Note: the operator is only available within a function
+	//Note: the operator( := ) is only available within a function
 	// once a variable is declared using the operator it cannot be redeclared
 	//can also be used to declare multiple variables
 	//can be used again if a particular variable is new
@@ -131,6 +131,12 @@ func main() {
 	formattedString = fmt.Sprintf("Membership status: %t", isMember)
 	fmt.Println(formattedString)
 
+	p, q := swap("hello", "world")
+	fmt.Println(p, q)
+}
+
+func swap(x, y string) (string, string) {
+	return y, x
 }
 
 type sample struct {
