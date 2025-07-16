@@ -42,7 +42,7 @@ func main() {
 	var w = true                 //bool
 	var x = 'a'                  //rune
 	var y = 3 + 5i               //complex128
-	var z = sample{name: "test"} //type inferred will be a main.Sample
+	var z = sample{name: "test"} //type inferred will be a main.Sample look at line 142-144
 
 	fmt.Printf("Type: %T Value: %v\n\n", t, t)
 	fmt.Printf("Type: %T Value: %v\n\n", u, u)
@@ -53,7 +53,7 @@ func main() {
 	fmt.Printf("Type: %T Value: %v\n\n", z, z)
 
 	//short variable declaration := -> both var and type can be omitted
-
+	//this is known as type inference
 	num := 123
 	circ := "circle"
 	fl := 5.6
@@ -71,6 +71,11 @@ func main() {
 
 	//Note: the operator( := ) is only available within a function
 	// once a variable is declared using the operator it cannot be redeclared
+	/*
+		name := "John" //declares a new variable
+		name := "Doe"  //compile time error: no new variables on left side of :=
+		name = "Doe"  //reassigns the value of the variable
+	*/
 	//can also be used to declare multiple variables
 	//can be used again if a particular variable is new
 
